@@ -1,0 +1,43 @@
+[
+{
+	"uri": "https://mohandiaoling.github.io/%E5%8D%9A%E5%AE%A2/",
+	"title": "博客",
+	"tags": [],
+	"description": "",
+	"content": "内容有待编辑\n"
+},
+{
+	"uri": "https://mohandiaoling.github.io/%E7%BD%91%E7%9B%98%E6%94%BB%E9%98%B2/",
+	"title": "网盘攻防",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mohandiaoling.github.io/",
+	"title": "Hugo 主题的 Learn 文档",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mohandiaoling.github.io/%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8/",
+	"title": "博客使用",
+	"tags": [],
+	"description": "",
+	"content": "创建一个博客网站：hugo new site myblog（站点名，可自定义）\n创建章节：hugo new --kind chapter \u0026lt;name\u0026gt;/_index.md\n创建章节下页面：hugo new \u0026lt;name\u0026gt;/name.md 若要该页面显示，需删除draft: true\n启动站点服务：hugo server\n 部署到github\n在博客目录下打开cmd，输入hugo --theme=hugo-theme-learn --baseUrl=\u0026quot;https://mohandiaoling.github.io\u0026quot; --buildDrafts\n会在博客根目录 myblog 生成 public 文件夹，里面就是编译好的静态页面文件。\n在public目录下：运行git bash，执行 git init将public文件夹变成 git 本地仓库\n执行git add .将文件夹所以文件放入暂存区\n执行 git commit -m \u0026quot;my hugoblog\u0026quot; 提交暂存区到本地仓库中\n执行git remote add origin https://github.com/mohandiaoling/mohandiaoling.github.io.git添加远程版本库\n最后，在浏览器中访问 https://mohandiaoling.github.io/ ，即可看到自己的博客网站。\n 标题：按#，从一到六，标题从大到小，一个#号时，标题位于中间\n注释：与html相同 主题分隔：（1）三个连续的下划线 （2）三个连续的破折号 （3）三个连续的星号。这三个显示是一样的。\n代码突出显示：在代码俩边分别加上```（英文下）。\n页面换行：在一行后面加俩个空格，再按回车\n"
+},
+{
+	"uri": "https://mohandiaoling.github.io/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mohandiaoling.github.io/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
