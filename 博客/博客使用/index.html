@@ -12,22 +12,22 @@
     <title>博客使用 - Hugo 主题的 Learn 文档</title>
 
     
-    <link href="/css/nucleus.css?1653100524" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1653100524" rel="stylesheet">
-    <link href="/css/hybrid.css?1653100524" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1653100524" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1653100524" rel="stylesheet">
-    <link href="/css/auto-complete.css?1653100524" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1653100524" rel="stylesheet">
-    <link href="/css/theme.css?1653100524" rel="stylesheet">
-    <link href="/css/tabs.css?1653100524" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1653100524" rel="stylesheet">
+    <link href="/css/nucleus.css?1653106120" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1653106120" rel="stylesheet">
+    <link href="/css/hybrid.css?1653106120" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1653106120" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1653106120" rel="stylesheet">
+    <link href="/css/auto-complete.css?1653106120" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1653106120" rel="stylesheet">
+    <link href="/css/theme.css?1653106120" rel="stylesheet">
+    <link href="/css/tabs.css?1653106120" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1653106120" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1653100524" rel="stylesheet">
+    <link href="/css/theme-blue.css?1653106120" rel="stylesheet">
     
-    <link href="/css/foo.css?1653100524" rel="stylesheet"><link href="/css/bar.css?1653100524" rel="stylesheet">
+    <link href="/css/foo.css?1653106120" rel="stylesheet"><link href="/css/bar.css?1653106120" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1653100524"></script>
+    <script src="/js/jquery-3.3.1.min.js?1653106120"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1653100524"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1653100524"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1653106120"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1653106120"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mohandiaoling.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1653100524"></script>
+<script type="text/javascript" src="/js/search.js?1653106120"></script>
 
     
   </div>
@@ -178,7 +178,7 @@
         
         ">
       <a href="/%E7%BD%91%E7%9B%98%E6%94%BB%E9%98%B2/">
-          <b>X--</b>网盘攻防
+          <b>--</b>网盘攻防
           
       </a>
       
@@ -261,6 +261,15 @@
       <ul>
         <li><a href="#博客内容创建">博客内容创建</a></li>
         <li><a href="#部署到github">部署到github</a></li>
+        <li><a href="#文本内容编辑">文本内容编辑</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -287,28 +296,228 @@
         
 
 
+<ul>
+<li>
+<p><a href="#%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E5%88%9B%E5%BB%BA">博客内容创建</a></p>
+</li>
+<li>
+<p><a href="#%E9%83%A8%E7%BD%B2%E5%88%B0github">部署到github</a></p>
+</li>
+<li>
+<p><a href="#%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E7%BC%96%E8%BE%91">文本内容编辑</a></p>
+</li>
+</ul>
 <h3 id="博客内容创建">博客内容创建</h3>
-<p>创建一个博客网站：<code>hugo new site myblog</code>（站点名，可自定义）<br>
-创建章节：<code>hugo new --kind chapter &lt;name&gt;/_index.md</code><br>
-创建章节下页面：<code>hugo new &lt;name&gt;/name.md </code>若要该页面显示，需删除<code>draft: true</code><br>
-启动站点服务：<code>hugo server</code></p>
+<ol>
+<li>创建一个博客网站：<code>hugo new site myblog</code>（站点名，可自定义）</li>
+<li>创建章节：<code>hugo new --kind chapter &lt;name&gt;/_index.md</code></li>
+<li>创建章节下页面：<code>hugo new &lt;name&gt;/name.md </code>若要该页面显示，需删除<code>draft: true</code></li>
+<li>启动站点服务：<code>hugo server</code></li>
+</ol>
 <hr>
 <h3 id="部署到github">部署到github</h3>
-<p>在博客目录下打开cmd，输入<code>hugo --theme=hugo-theme-learn --baseUrl=&quot;https://mohandiaoling.github.io&quot; --buildDrafts</code><br>
-会在博客根目录 myblog 生成 public 文件夹，里面就是编译好的静态页面文件。<br>
-在public目录下：运行git bash，执行 <code>git init</code>将public文件夹变成 git 本地仓库<br>
-执行<code>git add .</code>将文件夹所以文件放入暂存区<br>
-执行 <code>git commit -m &quot;提交文件&quot; </code>提交暂存区到本地仓库中<br>
-执行<code>git remote add origin https://github.com/mohandiaoling/mohandiaoling.github.io.git</code>添加远程版本库<br>
-然后执行<code>git pull</code><br>
-执行<code>git push -u origin master -f</code>将本地仓库代码推送到远程库<br>
-最后，在浏览器中访问 <code>https://mohandiaoling.github.io/ </code>，即可看到自己的博客网站。</p>
+<ol>
+<li>在博客目录下打开cmd，输入<code>hugo --theme=hugo-theme-learn --baseUrl=&quot;https://mohandiaoling.github.io&quot; --buildDrafts</code><br>
+会在博客根目录 myblog 生成 public 文件夹，里面就是编译好的静态页面文件。</li>
+<li>在public目录下：运行git bash，执行 <code>git init</code>将public文件夹变成 git 本地仓库</li>
+<li>执行<code>git add .</code>将文件夹所以文件放入暂存区</li>
+<li>执行 <code>git commit -m &quot;提交文件&quot; </code>提交暂存区到本地仓库中</li>
+<li>执行<code>git remote add origin https://github.com/mohandiaoling/mohandiaoling.github.io.git</code>添加远程版本库</li>
+<li>然后执行<code>git pull</code></li>
+<li>执行<code>git push -u origin master -f</code>将本地仓库代码推送到远程库</li>
+<li>最后，在浏览器中访问 <code>https://mohandiaoling.github.io/ </code>，即可看到自己的博客网站。</li>
+</ol>
 <hr>
-<p>标题：按#，从一到六，标题从大到小，一个#号时，标题位于中间。并且#与后面文档有一个空格<br>
-注释：<!-- raw HTML omitted -->与html相同
-主题分隔：（1）三个连续的下划线 （2）三个连续的破折号 （3）三个连续的星号。这三个显示是一样的。<br>
-代码突出显示：在代码俩边分别加上```（英文下）。</p>
-<p>页面换行：在一行后面加俩个空格，再按回车</p>
+<h3 id="文本内容编辑">文本内容编辑</h3>
+<ul>
+<li>标题：按#，从一到六，标题从大到小，一个#号时，标题位于中间。并且#与后面文档有一个空格。例如:</li>
+</ul>
+<pre tabindex="0"><code># h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+</code></pre><p>效果为：</p>
+<h1 id="h1-heading">h1 Heading</h1>
+<h4 id="h4-heading">h4 Heading</h4>
+<h5 id="h5-heading">h5 Heading</h5>
+<h6 id="h6-heading">h6 Heading</h6>
+<ul>
+<li>注释：<code>&lt;!-- 注释内容 --&gt;</code>与html相同</li>
+<li>主题分隔：（1）三个连续的下划线 （2）三个连续的破折号 （3）三个连续的星号。这三个显示是一样的。例如：<code>___</code>,<code>***</code>.<code>---</code>.<br>
+效果为：</li>
+</ul>
+<hr>
+<ul>
+<li>代码突出显示：在代码俩边分别加上```（英文下）。</li>
+<li>页面换行：在一行后面加俩个空格，再按回车</li>
+<li>粗体文本：在文本俩侧各加上俩个**，例如：<code>**rendered as bold text**</code><br>
+效果为：<strong>rendered as bold text</strong></li>
+<li>斜体文本：在文本俩侧各加上一个下划线，例如：<code>**rendered as bold text**</code><br>
+效果为：<em>rendered as italicized text</em></li>
+<li>删除线：文本俩侧各加上俩个波浪线,例如：<code>~~Strike through this text.~~</code><br>
+效果为：<del>Strike through this text.</del></li>
+<li>引用文档中其他来源的内容块：在要引用的任何文本之前添加<code>&gt;</code>。注意<code>&gt;</code>需要放在一行的最前面。例如：</li>
+</ul>
+<pre tabindex="0"><code>&gt; **Fusion Drive** combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
+</code></pre><p>效果为：</p>
+<blockquote>
+<p><strong>Fusion Drive</strong> combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.<br>
+也可用于嵌套：例如</p>
+</blockquote>
+<pre tabindex="0"><code>&gt; **Fusion Drive** combines a hard drive with a flash storage (solid-state drive) and presents it as a single logical volume with the space of both drives combined.
+</code></pre><p>效果为：</p>
+<blockquote>
+<p>Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.</p>
+<blockquote>
+<p>Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.</p>
+</blockquote>
+<p>Mauris sit amet ligula egestas, feugiat metus tincidunt, luctus libero. Donec congue finibus tempor. Vestibulum aliquet sollicitudin erat, ut aliquet purus posuere luctus.</p>
+</blockquote>
+<ul>
+<li>无序列表：在文本前加上*,-或者+。例如：</li>
+</ul>
+<pre tabindex="0"><code>* valid bullet
+- valid bullet
++ valid bullet
+</code></pre><p>效果为：</p>
+<ul>
+<li>valid bullet</li>
+</ul>
+<ul>
+<li>valid bullet</li>
+</ul>
+<ul>
+<li>valid bullet
+还可以嵌套使用，例如：</li>
+</ul>
+<pre tabindex="0"><code>+ Facilisis in pretium nisl aliquet
++ Nulla volutpat aliquam velit
+  - Phasellus iaculis neque
+  - Purus sodales ultricies
+  - Vestibulum laoreet porttitor sem
+  - Ac tristique libero volutpat at
+</code></pre><p>效果为：</p>
+<ul>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit
+<ul>
+<li>Phasellus iaculis neque</li>
+<li>Purus sodales ultricies</li>
+<li>Vestibulum laoreet porttitor sem</li>
+<li>Ac tristique libero volutpat at</li>
+</ul>
+</li>
+<li>有序列表：在其前加上数字，是否加上空格会有不同效果，例如：</li>
+</ul>
+<pre tabindex="0"><code>1. Lorem ipsum dolor sit amet
+4.Consectetur adipiscing elit
+2.Integer molestie lorem at massa
+8. Facilisis in pretium nisl aliquet
+4.Nulla volutpat aliquam velit
+99.Faucibus porta lacus fringilla vel
+21.Aenean sit amet erat nunc
+6. Eget porttitor lorem
+</code></pre><p>效果为：</p>
+<ol>
+<li>Lorem ipsum dolor sit amet
+4.Consectetur adipiscing elit
+2.Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet
+4.Nulla volutpat aliquam velit
+99.Faucibus porta lacus fringilla vel
+21.Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ol>
+<p>只有加上空格才会有序排列，就算文本前面数字混乱，也会按照从上到下依次排序。</p>
+<ul>
+<li>表格：通过将管道添加为每个单元格之间的分隔线，并在标题下添加一行短划线（也由条形分隔）来创建表。请注意，管道不需要垂直对齐。例如：</li>
+</ul>
+<pre tabindex="0"><code>| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+</code></pre><p>效果为：</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td>engine</td>
+<td>engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td>ext</td>
+<td>extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>表格右对齐：在任何标题下方的破折号右侧添加冒号将使该列的文本右对齐。例如：</li>
+</ul>
+<pre tabindex="0"><code>| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+</code></pre><p>效果为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Option</th>
+<th style="text-align:right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">data</td>
+<td style="text-align:right">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td style="text-align:right">engine</td>
+<td style="text-align:right">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td style="text-align:right">ext</td>
+<td style="text-align:right">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>链接：将鼠标悬停在链接上，没有工具提示。例如：<code>[Assemble](http://assemble.io)</code> 效果为：<a href="http://assemble.io">Assemble</a></li>
+<li>添加工具提示：将鼠标悬停在链接上，应该有一个工具提示。与链接格式不同的是，后面“”里面有工具提示内容。例如：</li>
+</ul>
+<pre tabindex="0"><code>[Upstage](https://github.com/upstage/ &#34;Visit Upstage!&#34;)
+</code></pre><p>效果为：<a href="https://github.com/upstage/" title="Visit Upstage!">Upstage</a></p>
+<ul>
+<li>图像：图像具有与链接类似的语法，但包含前面的感叹号。例如：
+<code>![Minion](https://octodex.github.com/images/minion.png)</code><br>
+效果为：<img src="https://octodex.github.com/images/minion.png" alt="Minion"></li>
+<li>图像的替代用法：例如：<code>![Alt text][id]</code>然后在文档后面加上<code>[id]: https://octodex.github.com/images/dojocat.jpg  &quot;The Dojocat&quot;</code></li>
+<li>调整图片大小：将 HTTP 参数和/或添加到链接图像以调整图像大小。值是 CSS 值（默认值为 ）。例如：<code>![Minion](https://octodex.github.com/images/minion.png?height=50px&amp;width=300px)</code>
+效果为：<img src="https://octodex.github.com/images/minion.png?height=100px&amp;width=100px" alt="Minion"></li>
+<li>命名锚点：能够跳转到同一页面上的指定锚点。例如：```# Table of Contents
+<ul>
+<li><a href="#chapter-1">Chapter 1</a></li>
+<li><a href="#chapter-2">Chapter 2</a></li>
+<li><a href="#chapter-3">Chapter 3</a></li>
+</ul>
+<pre tabindex="0"><code>效果为：# Table of Contents
+* [Chapter 1](#chapter-1)
+* [Chapter 2](#chapter-2)
+* [Chapter 3](#chapter-3)
+</code></pre>()里面中#后面的就是标题的名称</li>
+</ul>
 
 
 <footer class="footline">
@@ -409,16 +618,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1653100524"></script>
-    <script src="/js/perfect-scrollbar.min.js?1653100524"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1653100524"></script>
-    <script src="/js/jquery.sticky.js?1653100524"></script>
-    <script src="/js/featherlight.min.js?1653100524"></script>
-    <script src="/js/highlight.pack.js?1653100524"></script>
+    <script src="/js/clipboard.min.js?1653106120"></script>
+    <script src="/js/perfect-scrollbar.min.js?1653106120"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1653106120"></script>
+    <script src="/js/jquery.sticky.js?1653106120"></script>
+    <script src="/js/featherlight.min.js?1653106120"></script>
+    <script src="/js/highlight.pack.js?1653106120"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1653100524"></script>
-    <script src="/js/learn.js?1653100524"></script>
-    <script src="/js/hugo-learn.js?1653100524"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1653106120"></script>
+    <script src="/js/learn.js?1653106120"></script>
+    <script src="/js/hugo-learn.js?1653106120"></script>
     
         
             <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
