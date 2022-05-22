@@ -35,7 +35,7 @@
   部署到github
   文本内容编辑
   博客内容创建  创建一个博客网站：hugo new site myblog（站点名，可自定义） 创建章节：hugo new --kind chapter &amp;lt;name&amp;gt;/_index.md 创建章节下页面：hugo new &amp;lt;name&amp;gt;/name.md 若要该页面显示，需删除draft: true 启动站点服务：hugo server   部署到github  在博客目录下打开cmd，输入hugo --theme=hugo-theme-learn --baseUrl=&amp;quot;https://mohandiaoling.github.io&amp;quot; --buildDrafts
-会在博客根目录 myblog 生成 public 文件夹，里面就是编译好的静态页面文件。 在public目录下：运行git bash，执行 git init将public文件夹变成 git 本地仓库 执行git add .将文件夹所以文件放入暂存区 执行 git commit -m &amp;quot;提交文件&amp;quot; 提交暂存区到本地仓库中 执行git remote add origin https://github.com/mohandiaoling/mohandiaoling.github.io.git添加远程版本库 然后执行git pull 执行git push -u origin master -f将本地仓库代码推送到远程库 执行git push -u origin master,直到出现Everything up-to-date。 最后，在浏览器中访问 https://mohandiaoling.</description>
+会在博客根目录 myblog 生成 public 文件夹，里面就是编译好的静态页面文件。 在public目录下：运行git bash，执行 git init将public文件夹变成 git 本地仓库 执行git add .将文件夹所以文件放入暂存区 执行 git commit -m &amp;quot;提交文件&amp;quot; 提交暂存区到本地仓库中 执行git remote add origin git@github.com:mohandiaoling/mohandiaoling.github.io.git添加远程版本库 然后执行git pull 执行git push -u origin master -f将本地仓库代码推送到远程库 执行git push -u origin master,直到出现Everything up-to-date。 最后，在浏览器中访问 https://mohandiaoling.</description>
     </item>
     
   </channel>
