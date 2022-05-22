@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>电赛 on Hugo 主题的 Learn 文档</title>
+    <link>https://mohandiaoling.github.io/%E7%94%B5%E8%B5%9B/</link>
+    <description>Recent content in 电赛 on Hugo 主题的 Learn 文档</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 22 May 2022 14:50:55 +0800</lastBuildDate><atom:link href="https://mohandiaoling.github.io/%E7%94%B5%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常见问题解决链接</title>
+      <link>https://mohandiaoling.github.io/%E7%94%B5%E8%B5%9B/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Sun, 22 May 2022 14:51:47 +0800</pubDate>
+      
+      <guid>https://mohandiaoling.github.io/%E7%94%B5%E8%B5%9B/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E9%93%BE%E6%8E%A5/</guid>
+      <description> 立创元器件封装库导入AD的详细教程 立创元器件封装库导入AD AD19&amp;mdash;彻底解决原理图转PCB时，出现failed to add class member及Unknown Pin的问题 AD19导出Gerber文件-嘉立创打板  </description>
+    </item>
+    
+  </channel>
+</rss>

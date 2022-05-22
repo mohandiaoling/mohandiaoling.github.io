@@ -14,11 +14,25 @@
 	"content": ""
 },
 {
+	"uri": "https://mohandiaoling.github.io/%E7%94%B5%E8%B5%9B/",
+	"title": "电赛",
+	"tags": [],
+	"description": "",
+	"content": "Chapter X Some Chapter title Lorem Ipsum.\n"
+},
+{
 	"uri": "https://mohandiaoling.github.io/",
 	"title": "Hugo 主题的 Learn 文档",
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "https://mohandiaoling.github.io/%E7%94%B5%E8%B5%9B/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E9%93%BE%E6%8E%A5/",
+	"title": "常见问题解决链接",
+	"tags": [],
+	"description": "",
+	"content": " 立创元器件封装库导入AD的详细教程 立创元器件封装库导入AD AD19\u0026mdash;彻底解决原理图转PCB时，出现failed to add class member及Unknown Pin的问题 AD19导出Gerber文件-嘉立创打板  "
 },
 {
 	"uri": "https://mohandiaoling.github.io/%E5%8D%9A%E5%AE%A2/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8/",
