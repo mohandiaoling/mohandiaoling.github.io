@@ -12,22 +12,22 @@
     <title>过滤器 - Hugo 主题的 Learn 文档</title>
 
     
-    <link href="/css/nucleus.css?1653619976" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1653619976" rel="stylesheet">
-    <link href="/css/hybrid.css?1653619976" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1653619976" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1653619976" rel="stylesheet">
-    <link href="/css/auto-complete.css?1653619976" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1653619976" rel="stylesheet">
-    <link href="/css/theme.css?1653619976" rel="stylesheet">
-    <link href="/css/tabs.css?1653619976" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1653619976" rel="stylesheet">
+    <link href="/css/nucleus.css?1653643316" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1653643316" rel="stylesheet">
+    <link href="/css/hybrid.css?1653643316" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1653643316" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1653643316" rel="stylesheet">
+    <link href="/css/auto-complete.css?1653643316" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1653643316" rel="stylesheet">
+    <link href="/css/theme.css?1653643316" rel="stylesheet">
+    <link href="/css/tabs.css?1653643316" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1653643316" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1653619976" rel="stylesheet">
+    <link href="/css/theme-blue.css?1653643316" rel="stylesheet">
     
-    <link href="/css/foo.css?1653619976" rel="stylesheet"><link href="/css/bar.css?1653619976" rel="stylesheet">
+    <link href="/css/foo.css?1653643316" rel="stylesheet"><link href="/css/bar.css?1653643316" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1653619976"></script>
+    <script src="/js/jquery-3.3.1.min.js?1653643316"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1653619976"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1653619976"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1653643316"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1653643316"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mohandiaoling.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1653619976"></script>
+<script type="text/javascript" src="/js/search.js?1653643316"></script>
 
     
   </div>
@@ -400,17 +400,10 @@
 <li>通过@WebFilter注解设置其所能拦截的资源。</li>
 </ol>
 </li>
-<li>实列：
-<ul>
-<li>乱码处理：
-<ol>
-<li>处理POST请求</li>
-<li>处理GET请求且服务器在Tomcat8以下<br>
+<li>乱码处理：<br>
+1. 处理POST请求
+2. 处理GET请求且服务器在Tomcat8以下<br>
 具体代码：</li>
-</ol>
-</li>
-</ul>
-</li>
 </ul>
 <pre tabindex="0"><code>      package com.test.bean;
 
@@ -502,6 +495,129 @@ public class Filter1 implements Filter {
             return value;
 
         }
+    }
+}
+</code></pre><ul>
+<li>过滤特殊字符:</li>
+</ul>
+<pre tabindex="0"><code>package com.test.bean;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+
+public class Check {
+    public static boolean checkSpecialChar(String str) throws PatternSyntaxException {
+        String regEx = &#34;[!@#$%^&amp;*！@#￥%……/&amp;*]&#34;;
+        Pattern pattern = Pattern.compile(regEx);
+        Matcher matcher = pattern.matcher(str);
+        return matcher.find();
+    }
+}
+</code></pre><p>使用时，用</p>
+<pre tabindex="0"><code>boolean flag = Check.checkSpecialChar(fileName);
+</code></pre><ul>
+<li>将特殊字符变成*号</li>
+</ul>
+<pre tabindex="0"><code>package com.test.bean;
+
+import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.ArrayList;
+import java.util.List;
+
+
+//过滤特殊字符
+@WebFilter(&#34;/indexServlet&#34;)
+public class CharacterFilter implements Filter {
+        /**
+         * 这个适合用于使用一个包含许多特殊字符的文档
+         * private static List&lt;String&gt; list = null; // 敏感字集合
+        static {
+            BufferedReader br = null; // 字符缓存流
+            list = new ArrayList&lt;String&gt;();
+            try {
+                // 获取resources下指定文件路径
+                String fileName = CharacterFilter.class.getClassLoader().getResource(&#34;name.txt&#34;).getPath();//获取文件路径
+//            System.out.println(fileName);
+                br = new BufferedReader(new FileReader(fileName));
+                String str = null;
+                while ((str = br.readLine()) != null){ //读取数据
+                    list.add(str); //添加到集合
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally{
+                if (br != null) {
+                    try {
+                        br.close();//释放资源
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+        **/
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        Filter.super.init(filterConfig);
+    }
+
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        //强制类型转换
+        HttpServletRequest request=(HttpServletRequest)servletRequest;
+        HttpServletResponse response=(HttpServletResponse) servletResponse;
+
+        //定义特殊字符可能包含哪些
+        List&lt;String&gt; list=new ArrayList&lt;String&gt;();
+        list.add(&#34;&lt;22&#34;);
+        //过滤特殊字符
+
+
+        //创建动态代理对象
+        ServletRequest Proxy_Request = (ServletRequest) Proxy.newProxyInstance(request.getClass().getClassLoader(), request.getClass().getInterfaces(), new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                if (method.getName().equals(&#34;getParameter&#34;)) { // 判断是否是getParameter()、增强getParameter()方法
+                    String value = (String) method.invoke(request, args);  //增强返回值
+                    if (value != null) {
+                        for (String str : list) { //遍历敏感字
+                            if (value.contains(str)) { // 验证是否包含
+                                StringBuilder sb = new StringBuilder();
+                                int length = str.length();
+                                for (int i = 0; i &lt; length; i++) {
+                                    sb.append(&#34;*&#34;); // 添加星号
+                                }
+                                value = value.replace(str,sb.toString()); // 将敏感字替换为*、然后将值重新复制给value变量
+                            }
+                        }
+                    }
+                    return value; // 将新的值返回出去
+                }
+                return method.invoke(request,args); //执行方法
+            }
+        });
+        /*
+            这个调用chain.doFilter(request,response);//方法就是将执行下一个过滤器、或xxxServlet
+            如果没有下一个过滤就执行xxxServlet然后就会根据你的请求执行对应的get/post方法
+        * */
+        // 这里要注意这里传递过去的是增强后的代理对象
+        filterChain.doFilter(Proxy_Request,response);//简单来说这个就好比如过滤完成放行的意思/
+
+    }
+
+
+    @Override
+    public void destroy() {
+        Filter.super.destroy();
     }
 }
 </code></pre>
@@ -671,16 +787,16 @@ public class Filter1 implements Filter {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1653619976"></script>
-    <script src="/js/perfect-scrollbar.min.js?1653619976"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1653619976"></script>
-    <script src="/js/jquery.sticky.js?1653619976"></script>
-    <script src="/js/featherlight.min.js?1653619976"></script>
-    <script src="/js/highlight.pack.js?1653619976"></script>
+    <script src="/js/clipboard.min.js?1653643316"></script>
+    <script src="/js/perfect-scrollbar.min.js?1653643316"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1653643316"></script>
+    <script src="/js/jquery.sticky.js?1653643316"></script>
+    <script src="/js/featherlight.min.js?1653643316"></script>
+    <script src="/js/highlight.pack.js?1653643316"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1653619976"></script>
-    <script src="/js/learn.js?1653619976"></script>
-    <script src="/js/hugo-learn.js?1653619976"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1653643316"></script>
+    <script src="/js/learn.js?1653643316"></script>
+    <script src="/js/hugo-learn.js?1653643316"></script>
     
         
             <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
